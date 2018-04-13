@@ -1,5 +1,7 @@
 package com.toxemicfish.survival;
 
+import com.toxemicfish.survival.commands.BlockCoordsCommand;
+import com.toxemicfish.survival.commands.BlockSetCommand;
 import com.toxemicfish.survival.commands.resetStatsBoard;
 import com.toxemicfish.survival.events.BlockBreak;
 import com.toxemicfish.survival.events.Enderpearl;
@@ -34,7 +36,10 @@ public class Main extends JavaPlugin {
     }
 
     private void registerCommands() {
+
         getCommand("resetlevel").setExecutor(new resetStatsBoard());
+        getCommand("block").setExecutor(new BlockSetCommand());
+        getCommand("blockcoords").setExecutor(new BlockCoordsCommand());
     }
 
     private void registerEvents() {
